@@ -18,7 +18,7 @@ const Navbar = () => {
                                     height={40}
                                     src={"/logo.png"}
                                     alt="logo" />
-                              <a className="btn btn-ghost text-xl">DocAppoint</a>
+                              <a className="btn btn-ghost text-xl"><span className="text-blue-500">Doc</span><span className="text-success">Appoint</span></a>
                         </Link>
                   </div>
 
@@ -33,18 +33,18 @@ const Navbar = () => {
                   </div>
 
                   <div className="hidden md:flex items-center gap-5">
-                        <Link href="/features">
+                        <Link href="/login">
                               <div className="w-[131px] h-[51px] rounded-[15px] cursor-pointer transition-all duration-300 bg-gradient-to-br from-blue-500/40 to-transparent hover:bg-blue-500/70 hover:shadow-[0_0_10px_rgba(46,142,255,0.5)] flex items-center justify-center">
-                                    <div className="w-[127px] h-[47px] rounded-[13px] bg-neutral-900 flex items-center justify-center text-white font-semibold">
+                                    <div className="w-[127px] h-[47px] rounded-[13px] bg-info flex items-center justify-center text-white font-semibold">
                                           Login
                                     </div>
                               </div>
                         </Link>
 
                         {/* Pricing Button */}
-                        <Link href="/pricing">
+                        <Link href="/registration">
                               <div className="w-[131px] h-[51px] rounded-[15px] cursor-pointer transition-all duration-300 bg-gradient-to-br from-blue-500/40 to-transparent hover:bg-blue-500/70 hover:shadow-[0_0_10px_rgba(46,142,255,0.5)] flex items-center justify-center">
-                                    <div className="w-[127px] h-[47px] rounded-[13px] bg-neutral-900 flex items-center justify-center text-white font-semibold">
+                                    <div className="w-[127px] h-[47px] rounded-[13px] bg-accent flex items-center justify-center text-white font-semibold">
                                           Registration
                                     </div>
                               </div>
@@ -71,11 +71,11 @@ const Navbar = () => {
                               <NavLink href="/dashboard" className="block py-2">
                                     Dashboard
                               </NavLink>
-                              <NavLink href="/features" className="block py-2">
-                                    Features
+                              <NavLink href="/login" className="block py-2">
+                                    Login
                               </NavLink>
-                              <NavLink href="/pricing" className="block py-2">
-                                    Pricing
+                              <NavLink href="/registration" className="block py-2">
+                                    Registration
                               </NavLink>
                         </div>
                   )}
