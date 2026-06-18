@@ -2,53 +2,85 @@
 import { useState } from "react";
 import NavLink from "./Navlink";
 import Link from "next/link";
+import Image from "next/image";
 
-const AppNavbar = () => {
+const Navbar = () => {
       const [open, setOpen] = useState(false);
 
       return (
-            <nav className="p-4 flex justify-between items-center shadow container mx-auto">
-                  <div className="font-bold">
-                        <Link href="/">Logo</Link>
+            <nav className="relative container mx-auto flex items-center justify-between p-4 shadow">
+                  {/* Logo */}
+                  <div className="flex items-center">
+                        {/* <Link href="/">DocAppoint</Link> */}
+                        <Link href="/" className="flex items-center" >
+                              <Image
+                                    width={40}
+                                    height={40}
+                                    src={"/logo.png"}
+                                    alt="logo" />
+                              <a className="btn btn-ghost text-xl">DocAppoint</a>
+                        </Link>
                   </div>
 
-                  <div className="hidden md:flex gap-4">
+                  {/* Desktop Menu */}
+                  <div className="hidden md:flex items-center gap-5">
                         <NavLink href="/">Home</NavLink>
-                        <NavLink href="/appointment">All Appointment</NavLink>
+                        <NavLink href="/all-appointment">All Appointment</NavLink>
                         <NavLink href="/dashboard">Dashboard</NavLink>
 
+                        {/* Features Button */}
+
                   </div>
 
-                  {/* desktop */}
-                  <div className="hidden md:flex gap-4">
-                        <NavLink href="/features">Features</NavLink>
-                        <NavLink href="/pricing">Pricing</NavLink>
+                  <div className="hidden md:flex items-center gap-5">
+                        <Link href="/features">
+                              <div className="w-[131px] h-[51px] rounded-[15px] cursor-pointer transition-all duration-300 bg-gradient-to-br from-blue-500/40 to-transparent hover:bg-blue-500/70 hover:shadow-[0_0_10px_rgba(46,142,255,0.5)] flex items-center justify-center">
+                                    <div className="w-[127px] h-[47px] rounded-[13px] bg-neutral-900 flex items-center justify-center text-white font-semibold">
+                                          Login
+                                    </div>
+                              </div>
+                        </Link>
+
+                        {/* Pricing Button */}
+                        <Link href="/pricing">
+                              <div className="w-[131px] h-[51px] rounded-[15px] cursor-pointer transition-all duration-300 bg-gradient-to-br from-blue-500/40 to-transparent hover:bg-blue-500/70 hover:shadow-[0_0_10px_rgba(46,142,255,0.5)] flex items-center justify-center">
+                                    <div className="w-[127px] h-[47px] rounded-[13px] bg-neutral-900 flex items-center justify-center text-white font-semibold">
+                                          Registration
+                                    </div>
+                              </div>
+                        </Link>
                   </div>
 
-
-
-                  {/* mobile button */}
+                  {/* Mobile Button */}
                   <button
-                        className="md:hidden"
+                        className="md:hidden text-2xl"
                         onClick={() => setOpen(!open)}
                   >
                         ☰
                   </button>
 
-                  {/* mobile menu */}
+                  {/* Mobile Menu */}
                   {open && (
-                        <div className="absolute top-16 left-0 w-full bg-white shadow md:hidden p-4">
-                              <NavLink href="/" className="block py-2">Home</NavLink>
-                              <NavLink href="/appointment" className="block py-2">All Appointment</NavLink>
-                              <NavLink href="/dashboard" className="block py-2">Dashboard</NavLink>
-                              <NavLink href="/features" className="block py-2">Features</NavLink>
-                              <NavLink href="/pricing" className="block py-2">Pricing</NavLink>
-
+                        <div className="absolute top-16 left-0 w-full bg-white shadow md:hidden p-4 space-y-3">
+                              <NavLink href="/" className="block py-2">
+                                    Home
+                              </NavLink>
+                              <NavLink href="/all-appointment" className="block py-2">
+                                    All Appointment
+                              </NavLink>
+                              <NavLink href="/dashboard" className="block py-2">
+                                    Dashboard
+                              </NavLink>
+                              <NavLink href="/features" className="block py-2">
+                                    Features
+                              </NavLink>
+                              <NavLink href="/pricing" className="block py-2">
+                                    Pricing
+                              </NavLink>
                         </div>
-
                   )}
             </nav>
       );
 };
 
-export default AppNavbar;
+export default Navbar;
