@@ -1,27 +1,40 @@
 import React from 'react';
 import Image from "next/image";
+import HeroSlider from './HeroSlider';
 
 const Hero = () => {
       return (
-            <div>
-                  <div className="hero bg-base-200 min-h-screen">
-                        <div className="hero-content flex-col lg:flex-row-reverse">
-                              <Image
-                                    alt="hero"
-                                    width={400}
-                                    height={400}
-                                    src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-                                    className="max-w-sm rounded-lg shadow-2xl"
-                              />
-                              <div>
-                                    <h1 className="text-5xl font-bold">Box Office News!</h1>
-                                    <p className="py-6">
-                                          Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                                          quasi. In deleniti eaque aut repudiandae et a id nisi.
-                                    </p>
-                                    <button className="btn btn-primary">Get Started</button>
+            <div className="hero bg-base-200 min-h-screen container mx-auto px-4">
+                  <div className="hero-content flex-col lg:flex-row-reverse gap-10">
+
+                        {/* Slider */}
+                        <div className="flex-shrink-0 w-full lg:w-1/2">
+                              <HeroSlider />
+                        </div>
+
+                        {/* Content */}
+                        <div className="w-full lg:w-1/2">
+                              <h1 className="text-5xl font-bold leading-tight">
+                                    Book Your Doctor Appointment Easily
+                              </h1>
+
+                              <p className="py-6 text-base-content/70">
+                                    Find experienced doctors, book appointments instantly, and get
+                                    quality healthcare without waiting in long queues. Your health,
+                                    your time, your control.
+                              </p>
+
+                              <div className="flex gap-3">
+                                    <button className="btn btn-primary">
+                                          Book Appointment
+                                    </button>
+
+                                    <button className="btn btn-outline">
+                                          Learn More
+                                    </button>
                               </div>
                         </div>
+
                   </div>
             </div>
       );

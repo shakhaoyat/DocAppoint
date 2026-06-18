@@ -18,7 +18,7 @@ const Navbar = () => {
                                     height={40}
                                     src={"/logo.png"}
                                     alt="logo" />
-                              <a className="btn btn-ghost text-xl"><span className="text-blue-500">Doc</span><span className="text-success">Appoint</span></a>
+                              <h2 className="btn btn-ghost text-xl"><span className="text-blue-500">Doc</span><span className="text-success">Appoint</span></h2>
                         </Link>
                   </div>
 
