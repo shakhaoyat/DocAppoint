@@ -4,7 +4,7 @@ import HeroSlider from './HeroSlider';
 
 const Hero = () => {
       return (
-            <div className="hero bg-base-200 min-h-screen container mx-auto px-4">
+            <div className="hero bg-[url('/Hero.png')] min-h-screen container mx-auto px-4">
                   <div className="hero-content flex-col lg:flex-row-reverse gap-10">
 
                         {/* Slider */}
@@ -25,11 +25,11 @@ const Hero = () => {
                               </p>
 
                               <div className="flex gap-3">
-                                    <button className="btn btn-primary">
+                                    <button className="btn bg-accent">
                                           Book Appointment
                                     </button>
 
-                                    <button className="btn btn-outline">
+                                    <button className="btn btn-dash btn-info text-black">
                                           Learn More
                                     </button>
                               </div>
