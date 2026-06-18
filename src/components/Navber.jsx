@@ -1,80 +1,54 @@
 "use client";
-
-// import { authClient } from "@/lib/auth-client";
-import { Avatar, Button } from "@heroui/react";
-import Image from "next/image";
+import { useState } from "react";
+import NavLink from "./Navlink";
 import Link from "next/link";
-import React from "react";
 
-const Navbar = () => {
-      const { data: session } = authClient.useSession();
-      const user = session?.user;
-
-      const handleSignOut = async () => {
-            await authClient.signOut();
-      };
+const AppNavbar = () => {
+      const [open, setOpen] = useState(false);
 
       return (
-            <div className="bg-white py-3">
-                  <nav className="flex items-center justify-between max-w-7xl mx-auto">
-                        <ul className="flex gap-3">
-                              <li>
-                                    <Link href={"/"}>Home</Link>
-                              </li>
-                              <li>
-                                    <Link href={"/destinations"}>Destinations</Link>
-                              </li>
-                              <li>
-                                    <Link href={"/my-bookings"}>My Bookings</Link>
-                              </li>
+            <nav className="p-4 flex justify-between items-center shadow container mx-auto">
+                  <div className="font-bold">
+                        <Link href="/">Logo</Link>
+                  </div>
 
-                              <li>
-                                    <Link href={"/add-destination"}>Add Destination</Link>
-                              </li>
-                        </ul>
+                  <div className="hidden md:flex gap-4">
+                        <NavLink href="/">Home</NavLink>
+                        <NavLink href="/appointment">All Appointment</NavLink>
+                        <NavLink href="/dashboard">Dashboard</NavLink>
 
-                        <div>
-                              <Image
-                                    src={"/assets/Wanderlast.png"}
-                                    height={150}
-                                    width={150}
-                                    alt="logo"
-                              />
+                  </div>
+
+                  {/* desktop */}
+                  <div className="hidden md:flex gap-4">
+                        <NavLink href="/features">Features</NavLink>
+                        <NavLink href="/pricing">Pricing</NavLink>
+                  </div>
+
+
+
+                  {/* mobile button */}
+                  <button
+                        className="md:hidden"
+                        onClick={() => setOpen(!open)}
+                  >
+                        ☰
+                  </button>
+
+                  {/* mobile menu */}
+                  {open && (
+                        <div className="absolute top-16 left-0 w-full bg-white shadow md:hidden p-4">
+                              <NavLink href="/" className="block py-2">Home</NavLink>
+                              <NavLink href="/appointment" className="block py-2">All Appointment</NavLink>
+                              <NavLink href="/dashboard" className="block py-2">Dashboard</NavLink>
+                              <NavLink href="/features" className="block py-2">Features</NavLink>
+                              <NavLink href="/pricing" className="block py-2">Pricing</NavLink>
+
                         </div>
 
-                        <ul className="flex items-center gap-3">
-                              <li>
-                                    <Link href={"/profile"}>Profile</Link>
-                              </li>
-
-                              {user ? (
-                                    <>
-                                          <li>
-                                                <Avatar>
-                                                      <Avatar.Image referrerPolicy="no-referrer" alt="John Doe" src={user?.image} />
-                                                      <Avatar.Fallback>{user.name.charAt(0)}</Avatar.Fallback>
-                                                </Avatar>
-                                          </li>
-                                          <li>
-                                                <Button size="sm" onClick={handleSignOut} variant="danger" className={"rounded-none"}>
-                                                      Logout
-                                                </Button>
-                                          </li>
-                                    </>
-                              ) : (
-                                    <>
-                                          <li>
-                                                <Link href={"/login"}>Login</Link>
-                                          </li>
-                                          <li>
-                                                <Link href={"/signup"}>Sign Up</Link>
-                                          </li>
-                                    </>
-                              )}
-                        </ul>
-                  </nav>
-            </div>
+                  )}
+            </nav>
       );
 };
 
-export default Navbar;
+export default AppNavbar;
