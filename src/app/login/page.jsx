@@ -109,7 +109,7 @@ export default function Login() {
                                           <p className="text-sm text-slate-500 font-medium">
                                                 New to CourseHub?{' '}
                                                 <Link
-                                                      href="/register"
+                                                      href="/registration"
                                                       className="text-blue-600 font-black hover:underline underline-offset-4 transition-all"
                                                 >
                                                       Create an account
