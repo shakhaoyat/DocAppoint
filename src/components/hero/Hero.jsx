@@ -24,25 +24,23 @@ const Hero = () => {
                               </p>
 
                               <div className="flex flex-wrap gap-4">
-                                    <div className="flex gap-4">
-                                          <Button
-                                                color="primary"
-                                                radius="none"
-                                                size="lg"
-                                                className="px-8"
-                                          >
-                                                Book Appointment
-                                          </Button>
+                                    <Button
+                                          color="primary"
+                                          size="lg"
+                                          radius="none"
+                                          className="!rounded-none"
+                                    >
+                                          Book Appointment
+                                    </Button>
 
-                                          <Button
-                                                variant="bordered"
-                                                radius="none"
-                                                size="lg"
-                                                className="px-8 border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-white"
-                                          >
-                                                Learn More
-                                          </Button>
-                                    </div>
+                                    <Button
+                                          variant="bordered"
+                                          size="lg"
+                                          radius="none"
+                                          className="!rounded-none border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-white transition-colors"
+                                    >
+                                          Learn More
+                                    </Button>
                               </div>
                         </div>
 
