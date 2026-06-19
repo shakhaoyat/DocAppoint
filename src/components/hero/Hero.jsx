@@ -1,42 +1,57 @@
-import React from 'react';
-import Image from "next/image";
-import HeroSlider from './HeroSlider';
+"use client";
+
+import React from "react";
+import { Button } from "@heroui/react";
+import HeroSlider from "./HeroSlider";
 
 const Hero = () => {
       return (
-            <div className="hero bg-[url('/Hero.png')] min-h-screen container mx-auto px-4">
-                  <div className="hero-content flex-col lg:flex-row-reverse gap-10">
-
-                        {/* Slider */}
-                        <div className="w-full lg:w-1/2">
-                              <HeroSlider />
-                        </div>
-
+            <section
+                  className="min-h-screen bg-cover bg-center container mx-auto"
+                  style={{ backgroundImage: "url('/Hero.png')" }}
+            >
+                  <div className="container mx-auto px-6 py-20 flex flex-col-reverse items-center gap-12 lg:flex-row">
                         {/* Content */}
-                        <div className="w-full lg:w-1/2">
-                              <h1 className="text-5xl font-bold leading-tight">
+                        <div className="w-full lg:w-1/2 space-y-6">
+                              <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
                                     Book Your Doctor Appointment Easily
                               </h1>
 
-                              <p className="py-6 text-base-content/70">
+                              <p className="text-default-500 text-lg leading-relaxed">
                                     Find experienced doctors, book appointments instantly, and get
                                     quality healthcare without waiting in long queues. Your health,
                                     your time, your control.
                               </p>
 
-                              <div className="flex gap-3">
-                                    <button className="btn bg-accent">
-                                          Book Appointment
-                                    </button>
+                              <div className="flex flex-wrap gap-4">
+                                    <div className="flex gap-4">
+                                          <Button
+                                                color="primary"
+                                                radius="none"
+                                                size="lg"
+                                                className="px-8"
+                                          >
+                                                Book Appointment
+                                          </Button>
 
-                                    <button className="btn btn-dash btn-info text-black">
-                                          Learn More
-                                    </button>
+                                          <Button
+                                                variant="bordered"
+                                                radius="none"
+                                                size="lg"
+                                                className="px-8 border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-white"
+                                          >
+                                                Learn More
+                                          </Button>
+                                    </div>
                               </div>
                         </div>
 
+                        {/* Slider */}
+                        <div className="w-full lg:w-1/2">
+                              <HeroSlider />
+                        </div>
                   </div>
-            </div>
+            </section>
       );
 };
 
