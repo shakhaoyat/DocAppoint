@@ -25,7 +25,7 @@ const Navbar = () => {
                   {/* Desktop Menu */}
                   <div className="hidden md:flex items-center gap-5">
                         <NavLink href="/">Home</NavLink>
-                        <NavLink href="/all-appointment">All Appointment</NavLink>
+                        <NavLink href="/all-appointments">All Appointments</NavLink>
                         <NavLink href="/dashboard">Dashboard</NavLink>
 
                         {/* Features Button */}
@@ -65,8 +65,8 @@ const Navbar = () => {
                               <NavLink href="/" className="block py-2">
                                     Home
                               </NavLink>
-                              <NavLink href="/all-appointment" className="block py-2">
-                                    All Appointment
+                              <NavLink href="/all-appointments" className="block py-2">
+                                    All Appointments
                               </NavLink>
                               <NavLink href="/dashboard" className="block py-2">
                                     Dashboard
