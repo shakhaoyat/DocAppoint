@@ -8,7 +8,7 @@ const Hero = () => {
                   <div className="hero-content flex-col lg:flex-row-reverse gap-10">
 
                         {/* Slider */}
-                        <div className="flex-shrink-0 w-full lg:w-1/2">
+                        <div className="w-full lg:w-1/2">
                               <HeroSlider />
                         </div>
 
