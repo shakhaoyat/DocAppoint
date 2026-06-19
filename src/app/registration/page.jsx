@@ -4,11 +4,12 @@ import { Button, Input } from '@heroui/react';
 
 import Link from 'next/link';
 import { User, Mail, Lock, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Register() {
 
       return (
-            <div className="min-h-[80vh] flex flex-col bg-slate-50 py-12">
+            <div className="min-h-[80vh] flex flex-col bg-slate-50 py-12 container mx-auto">
                   <div className="grow flex items-center justify-center p-4">
                         <div className="w-full max-w-md">
                               <div className="bg-white p-10 rounded-[2.5rem] border border-slate-200 shadow-2xl space-y-8 relative overflow-hidden">
@@ -16,9 +17,9 @@ export default function Register() {
 
                                     <div className="text-center space-y-2 relative">
                                           <h2 className="text-3xl font-black text-slate-900 tracking-tight">
-                                                Join <span className="text-blue-600">Mentora</span>
+                                                Join <span className="text-blue-500">Doc</span><span className="text-success">Appoint</span>
                                           </h2>
-                                          <p className="text-slate-500 font-medium">Create your account to start learning</p>
+                                          <p className="text-slate-500 font-medium">Create Your Account For Doctor Appointments</p>
                                     </div>
 
                                     <form
@@ -103,6 +104,31 @@ export default function Register() {
                                                 Create Account <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                                           </Button>
                                     </form>
+
+                                    <div className="relative">
+                                          <div className="absolute inset-0 flex items-center">
+                                                <span className="w-full border-t border-slate-100"></span>
+                                          </div>
+                                          <div className="relative flex justify-center text-xs uppercase">
+                                                <span className="bg-white px-4 text-slate-400 font-bold tracking-widest">Or with email</span>
+                                          </div>
+                                    </div>
+
+                                    <div className="space-y-4">
+                                          <Button
+                                                variant="bordered"
+                                                className="w-full h-12 font-bold rounded-2xl border-slate-200 hover:bg-slate-50 transition-colors gap-3"
+                                          >
+                                                <Image
+                                                      width={20}
+                                                      height={20}
+                                                      src="https://www.google.com/favicon.ico"
+                                                      className="w-5 h-5"
+                                                      alt="Google"
+                                                />
+                                                Sign in with Google
+                                          </Button>
+                                    </div>
 
                                     <div className="text-center pt-2">
                                           <p className="text-sm text-slate-500 font-medium">

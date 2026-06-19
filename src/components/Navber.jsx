@@ -35,7 +35,7 @@ const Navbar = () => {
                   <div className="hidden md:flex items-center gap-5">
                         <Link href="/login">
                               <div className="w-[131px] h-[51px] rounded-[15px] cursor-pointer transition-all duration-300 bg-gradient-to-br from-blue-500/40 to-transparent hover:bg-blue-500/70 hover:shadow-[0_0_10px_rgba(46,142,255,0.5)] flex items-center justify-center">
-                                    <div className="w-[127px] h-[47px] rounded-[13px] bg-info flex items-center justify-center text-white font-semibold">
+                                    <div className="w-[127px] h-[47px] rounded-[13px] bg-success flex items-center justify-center text-white font-semibold">
                                           Login
                                     </div>
                               </div>
