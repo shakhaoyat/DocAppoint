@@ -1,8 +1,8 @@
-import AppointmentCard from "@/components/AppointmentCard";
+import DoctorSearch from "@/components/DoctorSearch";
 
 const fetchAppointments = async () => {
       try {
-            const res = await fetch("http://localhost:5000/all-appointments", {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/all-appointments`, {
                   cache: "no-store",
             });
 
@@ -27,20 +27,8 @@ const AllAppointmentsPage = async () => {
                               All Appointments
                         </h1>
 
-                        {appointments.length === 0 ? (
-                              <div className="text-center text-gray-500">
-                                    No appointments found.
-                              </div>
-                        ) : (
-                              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                    {appointments.map((appointment) => (
-                                          <AppointmentCard
-                                                key={appointment._id}
-                                                appointment={appointment}
-                                          />
-                                    ))}
-                              </div>
-                        )}
+                        {/* DoctorSearch handles filtering + rendering cards */}
+                        <DoctorSearch appointments={appointments} />
                   </div>
             </div>
       );

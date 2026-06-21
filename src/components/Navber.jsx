@@ -79,11 +79,7 @@ const Navbar = () => {
                                     </div>
 
                                     {/* Buttons */}
-                                    <Link href="/my-profile">
-                                          <button className="px-4 py-2 rounded-lg border hover:bg-gray-100">
-                                                Profile
-                                          </button>
-                                    </Link>
+
 
                                     {/* <button
                                           onClick={handleLogout}
@@ -102,78 +98,75 @@ const Navbar = () => {
                               </>
 
 
-                             
-                  ) : (
-                  <>
-                        {/* Login Button */}
-                        <Link href="/login">
-                              <div className="w-[131px] h-[51px] rounded-[15px] cursor-pointer transition-all duration-300 bg-gradient-to-br from-blue-500/40 to-transparent hover:bg-blue-500/70 hover:shadow-[0_0_10px_rgba(46,142,255,0.5)] flex items-center justify-center">
-                                    <div className="w-[127px] h-[47px] rounded-[13px] bg-success flex items-center justify-center text-white font-semibold">
-                                          Login
-                                    </div>
-                              </div>
-                        </Link>
 
-                        {/* Register Button */}
-                        <Link href="/registration">
-                              <div className="w-[131px] h-[51px] rounded-[15px] cursor-pointer transition-all duration-300 bg-gradient-to-br from-blue-500/40 to-transparent hover:bg-blue-500/70 hover:shadow-[0_0_10px_rgba(46,142,255,0.5)] flex items-center justify-center">
-                                    <div className="w-[127px] h-[47px] rounded-[13px] bg-accent flex items-center justify-center text-white font-semibold">
-                                          Registration
-                                    </div>
-                              </div>
-                        </Link>
-                  </>
-                        )}
-            </div>
-
-                  {/* Mobile Button */ }
-      <button
-            className="md:hidden text-2xl"
-            onClick={() => setOpen(!open)}
-      >
-            ☰
-      </button>
-
-      {/* Mobile Menu */ }
-      {
-            open && (
-                  <div className="absolute top-16 left-0 w-full bg-white shadow md:hidden p-4 space-y-3 z-50">
-                        <NavLink href="/" className="block py-2">
-                              Home
-                        </NavLink>
-                        <NavLink href="/all-appointments" className="block py-2">
-                              All Appointments
-                        </NavLink>
-                        <NavLink href="/dashboard" className="block py-2">
-                              Dashboard
-                        </NavLink>
-
-                        {!user ? (
-                              <>
-                                    <NavLink href="/login" className="block py-2">
-                                          Login
-                                    </NavLink>
-                                    <NavLink href="/registration" className="block py-2">
-                                          Registration
-                                    </NavLink>
-                              </>
                         ) : (
                               <>
-                                    <NavLink href="/my-profile" className="block py-2">
-                                          My Profile
-                                    </NavLink>
+                                    {/* Login Button */}
+                                    <Link href="/login">
+                                          <div className="w-[131px] h-[51px] rounded-[15px] cursor-pointer transition-all duration-300 bg-gradient-to-br from-blue-500/40 to-transparent hover:bg-blue-500/70 hover:shadow-[0_0_10px_rgba(46,142,255,0.5)] flex items-center justify-center">
+                                                <div className="w-[127px] h-[47px] rounded-[13px] bg-success flex items-center justify-center text-white font-semibold">
+                                                      Login
+                                                </div>
+                                          </div>
+                                    </Link>
 
-                                    <button
-                                          onClick={handleLogout}
-                                          className="text-red-500 block py-2"
-                                    >
-                                          Logout
-                                    </button>
+                                    {/* Register Button */}
+                                    <Link href="/registration">
+                                          <div className="w-[131px] h-[51px] rounded-[15px] cursor-pointer transition-all duration-300 bg-gradient-to-br from-blue-500/40 to-transparent hover:bg-blue-500/70 hover:shadow-[0_0_10px_rgba(46,142,255,0.5)] flex items-center justify-center">
+                                                <div className="w-[127px] h-[47px] rounded-[13px] bg-accent flex items-center justify-center text-white font-semibold">
+                                                      Registration
+                                                </div>
+                                          </div>
+                                    </Link>
                               </>
                         )}
                   </div>
-            )
-      }
+
+                  {/* Mobile Button */}
+                  <button
+                        className="md:hidden text-2xl"
+                        onClick={() => setOpen(!open)}
+                  >
+                        ☰
+                  </button>
+
+                  {/* Mobile Menu */}
+                  {
+                        open && (
+                              <div className="absolute top-16 left-0 w-full bg-white shadow md:hidden p-4 space-y-3 z-50">
+                                    <NavLink href="/" className="block py-2">
+                                          Home
+                                    </NavLink>
+                                    <NavLink href="/all-appointments" className="block py-2">
+                                          All Appointments
+                                    </NavLink>
+                                    <NavLink href="/dashboard" className="block py-2">
+                                          Dashboard
+                                    </NavLink>
+
+                                    {!user ? (
+                                          <>
+                                                <NavLink href="/login" className="block py-2">
+                                                      Login
+                                                </NavLink>
+                                                <NavLink href="/registration" className="block py-2">
+                                                      Registration
+                                                </NavLink>
+                                          </>
+                                    ) : (
+                                          <>
+
+                                                <button
+                                                      onClick={handleLogout}
+                                                      className="text-red-500 block py-2"
+                                                >
+                                                      Logout
+                                                </button>
+                                          </>
+                                    )}
+                              </div>
+                        )
+                  }
             </nav >
       );
 };
