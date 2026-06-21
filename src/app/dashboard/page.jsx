@@ -583,7 +583,7 @@ export default function DashboardPage() {
 
       if (isPending) {
             return (
-                  <div className="flex min-h-screen items-center justify-center bg-gray-50">
+                  <div className="flex min-h-screen items-center justify-center bg-gray-50 container mx-auto">
                         <Spinner size="lg" />
                   </div>
             );
@@ -596,7 +596,7 @@ export default function DashboardPage() {
                   {/* If you already render <Toaster /> in app/layout.jsx, remove this one
          to avoid duplicate toasts. */}
                   <Toaster position="top-right" toastOptions={{ duration: 3500 }} />
-                  <div className="flex min-h-screen bg-gray-50">
+                  <div className="flex min-h-screen bg-gray-50 container mx-auto">
                         <Sidebar active={tab} onSelect={setTab} user={user} />
                         <main className="flex-1 p-6 md:p-8 overflow-auto">
                               {tab === "bookings" && <MyBookings user={user} />}
