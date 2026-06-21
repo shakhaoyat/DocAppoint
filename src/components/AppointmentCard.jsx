@@ -2,10 +2,11 @@
 
 import { Card, CardHeader, CardFooter, Button } from "@heroui/react";
 import Image from "next/image";
+import Link from "next/link";
 
 const AppointmentCard = ({ appointment }) => {
       return (
-            <Card className="p-4 shadow-md group hover:shadow-lg transition-all duration-300 rounded-xl">
+            <Card className="p-4 shadow-md group hover:shadow-lg transition-all duration-300 rounded-xl container mx-auto">
                   {/* Image */}
                   <div className="relative w-full h-[200px] overflow-hidden rounded-xl">
                         <Image
@@ -49,12 +50,14 @@ const AppointmentCard = ({ appointment }) => {
 
                   {/* Footer */}
                   <CardFooter>
-                        <Button
-                              color="primary"
-                              className="w-full font-medium rounded-full"
-                        >
-                              View Details
-                        </Button>
+                        <Link href={`/all-appointments/${appointment._id}`} className="w-full">
+                              <Button
+                                    color="primary"
+                                    className="w-full font-medium rounded-full"
+                              >
+                                    View Details
+                              </Button>
+                        </Link>
                   </CardFooter>
             </Card>
       );
