@@ -3,6 +3,7 @@
 import React from "react";
 import { Button } from "@heroui/react";
 import HeroSlider from "./HeroSlider";
+import Link from "next/link";
 
 const Hero = () => {
       return (
@@ -24,23 +25,24 @@ const Hero = () => {
                               </p>
 
                               <div className="flex flex-wrap gap-4">
-                                    <Button
+                                    <Link href="/all-appointments"> <Button
+
                                           color="primary"
                                           size="lg"
                                           radius="none"
                                           className="!rounded-none"
                                     >
                                           Book Appointment
-                                    </Button>
+                                    </Button></Link>
 
-                                    <Button
+                                    <Link href="/"><Button
                                           variant="bordered"
                                           size="lg"
                                           radius="none"
                                           className="!rounded-none border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-white transition-colors"
                                     >
                                           Learn More
-                                    </Button>
+                                    </Button></Link>
                               </div>
                         </div>
 
