@@ -7,7 +7,7 @@ export default function Loading() {
       <header style={styles.header}>
         <div style={styles.headerInner}>
           <span style={styles.logo}>
-            <span style={{ color: "#0891b2" }}>♥</span> MediConnect
+            <span style={{ color: "#0891b2" }}>♥</span> DocAppoint
           </span>
         </div>
       </header>

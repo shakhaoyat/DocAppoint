@@ -8,6 +8,9 @@ import { useRouter } from "next/navigation";
 
 import { Avatar, Spinner } from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
+import { SlLogout } from "react-icons/sl";
+
+
 
 const Navbar = () => {
       const [open, setOpen] = useState(false);
@@ -90,8 +93,9 @@ const Navbar = () => {
 
                                     <Link href="/registration">
                                           <div className="w-[131px] h-[51px] rounded-[15px] cursor-pointer transition-all duration-300 bg-gradient-to-br from-blue-500/40 to-transparent hover:bg-blue-500/70 hover:shadow-[0_0_10px_rgba(46,142,255,0.5)] flex items-center justify-center">
-                                                <div className="w-[127px] h-[47px] rounded-[13px] bg-accent flex items-center justify-center text-white font-semibold" onClick={handleLogout}>
-                                                      Logout
+
+                                                <div className="w-[127px] h-[47px] rounded-[13px] bg-accent flex items-center justify-center text-white font-semibold gap-2" onClick={handleLogout}>
+                                                      <SlLogout class Name="cursor-pointer transition-all duration-300 bg-gradient-to-br from-blue-500/40 to-transparent hover:bg-blue-500/70 hover:shadow-[0_0_10px_rgba(46,142,255,0.5)] flex items-center justify-center " /> Logout
                                                 </div>
                                           </div>
                                     </Link>
@@ -158,8 +162,9 @@ const Navbar = () => {
 
                                                 <button
                                                       onClick={handleLogout}
-                                                      className="text-red-500 block py-2"
+                                                      className="text-red-500 block py-2 flex items-center gap-2"
                                                 >
+                                                      <SlLogout class Name="bg-red-500 mr-2" />
                                                       Logout
                                                 </button>
                                           </>
