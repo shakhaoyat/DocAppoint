@@ -4,12 +4,16 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import toast from "react-hot-toast";
+import { authClient } from "@/lib/auth-client";
 
 import { FaArrowLeft, FaHospital, FaMapMarkerAlt, FaMedal, FaUsers, FaStar, FaCreditCard, FaClock, FaCircle, FaUser, FaPhone, FaCalendarAlt, FaClipboardList, FaCheckCircle, FaTimes } from "react-icons/fa";
 
 const SLOTS = ["09:00 AM", "10:00 AM", "11:00 AM", "04:00 PM", "05:00 PM", "06:00 PM"];
 
 export default function DoctorClient({ doctor }) {
+  const { data: session } = authClient.useSession();
+  const userEmail = session?.user?.email;
+
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [submitted, setSubmitted] = useState(false);
@@ -47,8 +51,10 @@ export default function DoctorClient({ doctor }) {
         body: JSON.stringify({
           doctorId: doctor._id,
           doctorName: doctor.name,
+          doctorImage: doctor.image,
           specialty: doctor.specialty,
           fee: doctor.fee,
+          email: userEmail,
           name: form.name,
           phone: form.phone,
           date: form.date,
@@ -285,8 +291,8 @@ export default function DoctorClient({ doctor }) {
                         key={slot}
                         onClick={() => setSelectedSlot(slot)}
                         className={`text-xs p-2 rounded border flex items-center justify-center gap-1.5 ${selectedSlot === slot
-                            ? "bg-cyan-100 border-cyan-500 text-cyan-700"
-                            : "bg-slate-100 text-slate-600"
+                          ? "bg-cyan-100 border-cyan-500 text-cyan-700"
+                          : "bg-slate-100 text-slate-600"
                           }`}
                       >
                         <FaClock className="text-[10px]" /> {slot}

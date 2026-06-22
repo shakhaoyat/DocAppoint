@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { authClient } from '@/lib/auth-client';
-import { toast } from 'react-toastify';
+import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 
 export default function Login() {
@@ -23,11 +23,7 @@ export default function Login() {
 
       const handleGoogleSignin = async () => {
             try {
-                  const data = await authClient.signIn.social({
-                        provider: 'google',
-                  });
-
-                  console.log(data);
+                  await authClient.signIn.social({ provider: 'google' });
             } catch (err) {
                   toast.error('Google login failed');
             }
@@ -79,7 +75,7 @@ export default function Login() {
 
                                     <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
                                           {/* Email */}
-                                          <div className="space-y-2 ">
+                                          <div className="space-y-2">
                                                 <label className="text-sm font-bold text-slate-700 ml-1">
                                                       Email Address
                                                 </label>
