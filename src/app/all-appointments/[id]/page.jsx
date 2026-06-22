@@ -8,7 +8,7 @@ export async function generateMetadata({ params }) {
   try {
     const { id } = await params;
     const res = await fetch(
-      `http://localhost:5000/all-appointments/${id}`,
+      `${process.env.NEXT_PUBLIC_API_URL}/all-appointments/${id}`,
       { cache: "no-store" }
     );
     if (!res.ok) return { title: "Doctor Not Found" };
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }) {
 
 async function getDoctor(id) {
   const res = await fetch(
-    `http://localhost:5000/all-appointments/${id}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/all-appointments/${id}`,
     { cache: "no-store" }
   );
   if (!res.ok) return null;

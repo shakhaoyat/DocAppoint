@@ -86,6 +86,7 @@ export default function Register() {
                                                       Full Name
                                                 </label>
                                                 <Input
+                                                      className="border-2 border-slate-200 hover:border-blue-600/50 focus-within:border-blue-600 transition-all duration-300 h-14 bg-white w-full rounded-2xl"
                                                       placeholder="Enter your name"
                                                       startContent={<User className="w-5 h-5 text-slate-400" />}
                                                       {...register('name', {
@@ -105,6 +106,7 @@ export default function Register() {
                                                       Email Address
                                                 </label>
                                                 <Input
+                                                      className="border-2 border-slate-200 hover:border-blue-600/50 focus-within:border-blue-600 transition-all duration-300 h-14 bg-white w-full rounded-2xl"
                                                       type="email"
                                                       placeholder="Enter your email"
                                                       startContent={<Mail className="w-5 h-5 text-slate-400" />}
@@ -132,6 +134,7 @@ export default function Register() {
                                                       placeholder="https://images.unsplash.com/..."
                                                       type="url"
                                                       startContent={<User className="w-5 h-5 text-slate-400" />}
+                                                      className="border-2 border-slate-200 hover:border-blue-600/50 focus-within:border-blue-600 transition-all duration-300 h-14 bg-white w-full rounded-2xl"
                                                       {...register('image', {
                                                             pattern: {
                                                                   value: /^(https?:\/\/.*)?$/,
@@ -147,6 +150,7 @@ export default function Register() {
                                                       Password
                                                 </label>
                                                 <Input
+                                                      className="border-2 border-slate-200 hover:border-blue-600/50 focus-within:border-blue-600 transition-all duration-300 h-14 bg-white w-full rounded-2xl"
                                                       type="password"
                                                       placeholder="••••••••"
                                                       startContent={<Lock className="w-5 h-5 text-slate-400" />}

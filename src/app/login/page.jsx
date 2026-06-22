@@ -79,11 +79,12 @@ export default function Login() {
 
                                     <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
                                           {/* Email */}
-                                          <div className="space-y-2">
+                                          <div className="space-y-2 ">
                                                 <label className="text-sm font-bold text-slate-700 ml-1">
                                                       Email Address
                                                 </label>
                                                 <Input
+                                                      className="border-2 border-slate-200 hover:border-blue-600/50 focus-within:border-blue-600 transition-all duration-300 h-14 bg-white w-full rounded-2xl"
                                                       type="email"
                                                       placeholder="Enter your email"
                                                       startContent={<Mail className="w-5 h-5 text-slate-400" />}
@@ -104,6 +105,7 @@ export default function Login() {
                                                       Password
                                                 </label>
                                                 <Input
+                                                      className="border-2 border-slate-200 hover:border-blue-600/50 focus-within:border-blue-600 transition-all duration-300 h-14 bg-white w-full rounded-2xl"
                                                       type="password"
                                                       placeholder="••••••••"
                                                       startContent={<Lock className="w-5 h-5 text-slate-400" />}
